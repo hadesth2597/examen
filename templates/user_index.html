@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6 lt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7 lt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8 lt8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  -->
+    <title>Bagels</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bagels" />
+    <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../static/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../static/css/animate-custom.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../static/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="../static/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../static/styles/pantalla1.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+</head>
+<nav class="navbar navbar-inverse navbar-fixed-top" id="nab">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Aplicaciones en la Nube <i class="fa fa-cloud" aria-hidden="true"></i></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Inicio</a></li>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li><a href="">Ganados: {{diccionario.win}}</a></li>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li> <a href="">Perdidos: {{diccionario.lost}}</a></li>
+        </ul>
+        <ul class="nav navbar-nav">
+            <li> <a href="">Intentos: {{diccionario.try}}</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/logout"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href=""><i class="fa fa-user" aria-hidden="true"></i>
+</span> Bienvenido: {{diccionario.nombre}}</a></li>
+        </ul>
+    </div>
+</nav>
+<style>
+    #nab {
+        opacity: 0.8;
+    }
+</style>
+
+<body>
+    <div class="login-form" align="center">
+        <form method="post" action="/user_index">
+            <h1>¡Bagels!</h1>
+            <div align="justify">
+                Estoy pensando en un número de 3s dígitos. Tratar de adivinar cual es..He aquí algunas pistas: Cuando digo:
+                <lu>
+                    <li><b>Pico:</b> Un dígito es correcto pero en la posición incorrecta.</li>
+                    <li><b>Fermi:</b> Un dígito es correcto y en la posición correcta.</li>
+                    <li><b>Bagels:</b> ningun dígito es correcto.</li>
+                </lu>
+            </div>
+            <br>
+            <br>
+            <div class="form-group ">
+                <input type="text" pattern="[0-9]{3}" class="form-control" min="0" minlength="3" placeholder="Numero" name="numero" required maxlength="3">
+                <i class="fa fa-sort-numeric-asc" aria-hidden="true"></i>
+
+                <div align="center"><b>{{mensaje}}</b>
+                </div>
+                <br><br>
+                <div align="center"><b>{{mensaje2}}  {{secret}}</b>
+                </div>
+                <button type="submit" class="log-btn" name="verificar" id="verificar">Verificar</button><br>
+                <br>
+        </form>
+</body>
+
+</html>
